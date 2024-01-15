@@ -13,8 +13,11 @@ const mongoose = require('mongoose');
 
 mongoose.connect("mongodb://0.0.0.0:27017/MentorStudentDB",
     { useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => console.log("connected to mongoDB...."))
-    .catch((err) => console.error("could not connect to mongoDB...", err));
+    const connection = mongoose.connection;
+connection.on('open',() => console.log("MongoDB Connected"));
+
+    // .then(() => console.log("connected to mongoDB...."))
+    // .catch((err) => console.error("could not connect to mongoDB...", err));
 
 
 // app.get('/', (req, res) => res.send(`
