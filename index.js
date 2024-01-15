@@ -11,7 +11,7 @@ const PORT = 5000;
 
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://0.0.0.0:27017/MentorStudentDB",
+mongoose.connect("mongodb://localhost:27017/MentorStudentDB",
     { useNewUrlParser: true, useUnifiedTopology: true})
     const connection = mongoose.connection;
 connection.on('open',() => console.log("MongoDB Connected"));
