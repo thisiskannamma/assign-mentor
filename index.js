@@ -13,26 +13,27 @@ const mongoose = require('mongoose');
 
 mongoose.connect("mongodb://0.0.0.0:27017/MentorStudentDB",
     { useNewUrlParser: true, useUnifiedTopology: true})
-    const connection = mongoose.connection;
-connection.on('open',() => console.log("MongoDB Connected"));
-
-    // .then(() => console.log("connected to mongoDB...."))
-    // .catch((err) => console.error("could not connect to mongoDB...", err));
+    .then(() => console.log("connected to mongoDB...."))
+    .catch((err) => console.error("could not connect to mongoDB...", err));
 
 
-// app.get('/', (req, res) => res.send(`
-// <div>
-// <p> In Home Page </p>
-// <p>To get all mentor List - https://zen-assign-mentors.herokuapp.com/Mentors </p>
-// <br>
-// <p>To get all Students List - https://zen-assign-mentors.herokuapp.com/Students </p>
-// <br>
-// <p>To get mentor based on ID - https://zen-assign-mentors.herokuapp.com/Mentors/get-mentor/:id<p>
-// <p>sample - https://zen-assign-mentors.herokuapp.com/Mentors/get-mentor/60e7f515d5ff5342a06652e3 </p>
+app.get('/', (req, res) => res.send(`
+<div>
+<p>Because my rendor app couldn't able to connect to mongoDB compass.please use this link to check details  </p>
+<p>To get all mentor List - <a>http://localhost:5000/Mentors<a> </p>
+<br>
+<p>To get all Students List - http://localhost:5000/Students </p>
+<br>
+<p>To get mentor based on ID - http://localhost:5000/Mentors/get-mentor/65a4d070b0657ec3378751c5<p>
+<br>
+<p>To get students with no mentor - http://localhost:5000/Students/no-mentors<p>
+<br>
+<p>To get all students for a particular mentor - http://localhost:5000/Students/mentor-students/65a4ce5db0657ec3378751c0 </p>
+<br>
 
-// <p> To test Post and update - visit Frontend page of the application - https://preethi-st.github.io/ZEN-Mentors-Frontend/ </p>
-// </div>
-// `))
+
+
+`))
 
 app.use('/Mentors', mentorRouter);
 app.use('/Students', studentRouter);
